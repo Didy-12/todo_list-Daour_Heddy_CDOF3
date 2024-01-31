@@ -27,4 +27,4 @@ class TodoList:
             print("Tasks:")
             for i, task in enumerate(self.tasks):
                 status = "Completed" if task["completed"] else "Not Completed"
-                print(f"{i+1}. {task['task']} - {status}")
+                print(f"{i}. {task['task']} - {status}")
