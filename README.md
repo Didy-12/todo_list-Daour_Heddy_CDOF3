@@ -42,7 +42,7 @@ Python - The programming language used
 
 ## Contributing
 
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests.
+Please read [CONTRIBUTING.md](https://github.com/Didy-12/todo_list-Daour_Heddy_CDOF3/blob/main/Contributing.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## Versioning
 
