@@ -38,5 +38,5 @@ def main():
         else:
             print("Invalid choice. Please enter a number between 1 and 6.")
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
