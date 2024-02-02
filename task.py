@@ -1,9 +1,12 @@
+from datetime import datetime, timedelta
+
 class TodoList:
-    def __init__(self):
+    def _init_(self):
         self.tasks = []
 
-    def add_task(self, task):
-        self.tasks.append({"task": task, "completed": False})
+    def add_task(self, task, deadline=None):
+        task_info = {"task": task, "completed": False, "deadline": deadline}
+        self.tasks.append(task_info)
         print("Task added successfully.")
 
     def delete_task(self, index):
@@ -27,4 +30,15 @@ class TodoList:
             print("Tasks:")
             for i, task in enumerate(self.tasks):
                 status = "Completed" if task["completed"] else "Not Completed"
-                print(f"{i}. {task['task']} - {status}")
+                deadline = task.get("deadline", "No deadline")
+                print(f"{i}. {task['task']} - {status} - Deadline: {deadline}")
+
+    def upcoming_tasks(self):
+        now = datetime.now()
+        upcoming_tasks = [task for task in self.tasks if task.get("deadline") and task["deadline"] > now]
+        if not upcoming_tasks:
+            print("No upcoming tasks.")
+        else:
+            print("Upcoming Tasks:")
+            for i, task in enumerate(upcoming_tasks):
+                print(f"{i}. {task['task']} - Deadline: {task['deadline']}")
